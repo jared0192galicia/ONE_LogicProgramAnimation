@@ -6,15 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Struc Basic</title>
+    <style>
+        *{
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
     <main>
-        <canvas>
+        <canvas width="1000" height="800">
             <!-- Pizarra de animacion -->
         </canvas>
 
         <script>
-            // Codigo js
+            var pantalla = document.querySelector("canvas");
+            var pinsel = pantalla.getContext("2d");
+
+            pinsel.fillStyle = "azure";
+            pinsel.fillRect(100, 50, 900, 500);
+
+            pinsel.fillStyle = "green";
+            pinsel.fillRect(100, 50, 266, 500);
+            
+            pinsel.fillStyle = "red";
+            pinsel.fillRect(733, 50, 900, 500);
+            
         </script>
     </main>
 </body>
