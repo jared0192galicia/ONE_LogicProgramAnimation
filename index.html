@@ -25,26 +25,25 @@
     </header>
     <main>
         <section>
-            <canvas width="450" height="400"></canvas>
+            <canvas width="600" height="600"></canvas>
             <script>
                 var pantalla = document.querySelector("canvas");
                 var pincel = pantalla.getContext("2d");
+                pincel.fillStyle = "lightgray";
+                pincel.fillRect(0, 0, 600, 500);
 
-                pincel.fillStyle = "aliceblue";
-                // Contorno externo
-                pincel.beginPath();
-                pincel.moveTo(50, 50);
-                pincel.lineTo(50, 400);
-                pincel.lineTo(400, 400);
-                pincel.fill();
+                function dibujarCirculo(x, y, radio, color) {
 
-                // contorno interno
-                pincel.fillStyle = "black";
-                pincel.beginPath();
-                pincel.moveTo(100, 175);
-                pincel.lineTo(100, 350);
-                pincel.lineTo(275, 350);
-                pincel.fill();
+                    pincel.fillStyle = color;
+                    pincel.beginPath();
+                    pincel.arc(x, y, radio, 0, 2*3.14);
+                    pincel.fill();
+                }
+                dibujarCirculo(150, 250, 50, "orange");
+                dibujarCirculo(250, 250, 50, "red");
+                dibujarCirculo(250, 150, 50, "yellow");
+                dibujarCirculo(350, 250, 50, "black");
+                dibujarCirculo(250, 350, 50, "blue");
 
             </script>
         </section>
