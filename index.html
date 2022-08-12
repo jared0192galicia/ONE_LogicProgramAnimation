@@ -1,51 +1,50 @@
-<!-- Estructura basica -->
+<!-- Cabeza de Creeper -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struc Basic</title>
+    <meta name="description" content="Cabezas">
+    <title>Creeper</title>
     <style>
         *{
             background-color: black;
         }
+        #title {
+            color: aquamarine;
+        }
+        .name {
+            color: aqua;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h2 id="title">Cabeza de Creeper</h2>
+    </header>
     <main>
-        <canvas width="600" height="400">
-            <!-- Pizarra de animacion -->
-        </canvas>
+        <section>
+            <canvas width="450" height="300"></canvas>
+            <script>
+                var pantalla = document.querySelector("canvas");
+                var pincel = pantalla.getContext("2d");
 
-        <script>
-            var pantalla = document.querySelector("canvas");
-            var pinsel = pantalla.getContext("2d");
+                pincel.fillStyle = "darkgreen";
+                pincel.fillRect(100, 0, 450, 300);
 
-            // Rectangulos
-            pinsel.fillStyle = "lightgrey";
-            pinsel.fillRect(0, 0, 600, 400);
-
-            pinsel.fillStyle = "green";
-            pinsel.fillRect(0, 0, 200, 400);
-            
-            pinsel.fillStyle = "red";
-            pinsel.fillRect(400, 0, 600, 400);
-            
-            // Trazo libre con coordenadas
-            pinsel.fillStyle = "brown";
-            pinsel.beginPath();
-            pinsel.moveTo(300, 200);
-            pinsel.lineTo(200, 400);
-            pinsel.lineTo(400, 400);
-            pinsel.fill();
-
-            // Trazo de un circulo
-            pinsel.fillStyle = "blue";
-            pinsel.beginPath();
-            pinsel.arc(300, 200, 50, 0, 2*3.1416);
-            pinsel.fill();
-        </script>
+                pincel.fillStyle = "black";
+                pincel.fillRect(155, 50, 90, 90);
+                pincel.fillRect(315, 50, 90, 90);
+                pincel.fillRect(245, 140, 70, 100);
+                
+                pincel.fillRect(195, 190, 50, 110);
+                pincel.fillRect(305, 190, 50, 110);
+            </script>
+        </section>
     </main>
+    <footer>
+        <h3 class="name">Creado por pancho</h3>
+    </footer>
 </body>
 </html>
