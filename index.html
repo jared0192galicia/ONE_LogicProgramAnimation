@@ -1,12 +1,12 @@
-<!-- Cabeza de Creeper -->
+<!-- Escuadra -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cabezas">
-    <title>Creeper</title>
+    <title>Escuadra</title>
     <style>
         *{
             background-color: black;
@@ -21,30 +21,36 @@
 </head>
 <body>
     <header>
-        <h2 id="title">Cabeza de Creeper</h2>
+        <h2 id="title">Escuadra</h2>
     </header>
     <main>
         <section>
-            <canvas width="450" height="300"></canvas>
+            <canvas width="450" height="400"></canvas>
             <script>
                 var pantalla = document.querySelector("canvas");
                 var pincel = pantalla.getContext("2d");
 
-                pincel.fillStyle = "darkgreen";
-                pincel.fillRect(100, 0, 450, 300);
+                pincel.fillStyle = "aliceblue";
+                // Contorno externo
+                pincel.beginPath();
+                pincel.moveTo(50, 50);
+                pincel.lineTo(50, 400);
+                pincel.lineTo(400, 400);
+                pincel.fill();
 
+                // contorno interno
                 pincel.fillStyle = "black";
-                pincel.fillRect(155, 50, 90, 90);
-                pincel.fillRect(315, 50, 90, 90);
-                pincel.fillRect(245, 140, 70, 100);
-                
-                pincel.fillRect(195, 190, 50, 110);
-                pincel.fillRect(305, 190, 50, 110);
+                pincel.beginPath();
+                pincel.moveTo(100, 175);
+                pincel.lineTo(100, 350);
+                pincel.lineTo(275, 350);
+                pincel.fill();
+
             </script>
         </section>
     </main>
     <footer>
-        <h3 class="name">Creado por pancho</h3>
+        <h3 class="name">ONE</h3>
     </footer>
 </body>
 </html>
