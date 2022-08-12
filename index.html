@@ -14,7 +14,7 @@
 </head>
 <body>
     <main>
-        <canvas width="1000" height="800">
+        <canvas width="600" height="400">
             <!-- Pizarra de animacion -->
         </canvas>
 
@@ -22,15 +22,29 @@
             var pantalla = document.querySelector("canvas");
             var pinsel = pantalla.getContext("2d");
 
-            pinsel.fillStyle = "azure";
-            pinsel.fillRect(100, 50, 900, 500);
+            // Rectangulos
+            pinsel.fillStyle = "lightgrey";
+            pinsel.fillRect(0, 0, 600, 400);
 
             pinsel.fillStyle = "green";
-            pinsel.fillRect(100, 50, 266, 500);
+            pinsel.fillRect(0, 0, 200, 400);
             
             pinsel.fillStyle = "red";
-            pinsel.fillRect(733, 50, 900, 500);
+            pinsel.fillRect(400, 0, 600, 400);
             
+            // Trazo libre con coordenadas
+            pinsel.fillStyle = "brown";
+            pinsel.beginPath();
+            pinsel.moveTo(300, 200);
+            pinsel.lineTo(200, 400);
+            pinsel.lineTo(400, 400);
+            pinsel.fill();
+
+            // Trazo de un circulo
+            pinsel.fillStyle = "blue";
+            pinsel.beginPath();
+            pinsel.arc(300, 200, 50, 0, 2*3.1416);
+            pinsel.fill();
         </script>
     </main>
 </body>
