@@ -28,23 +28,36 @@
             <canvas width="600" height="600"></canvas>
             <script>
                 var pantalla = document.querySelector("canvas");
-                var pincel = pantalla.getContext("2d");
-                pincel.fillStyle = "lightgray";
-                pincel.fillRect(0, 0, 600, 500);
+                var pincel = pantalla.getContext("2d");		
+                pincel.fillStyle = "lightgrey";
+                pincel.fillRect(0,0,600,400); 
 
-                function dibujarCirculo(x, y, radio, color) {
 
-                    pincel.fillStyle = color;
+
+                function disenharCircunferencia(x,y,radio){
+                    pincel.fillStyle = "blue";
                     pincel.beginPath();
-                    pincel.arc(x, y, radio, 0, 2*3.14);
+                    pincel.arc(x,y,radio,0,2*Math.PI);
                     pincel.fill();
-                }
-                dibujarCirculo(150, 250, 50, "orange");
-                dibujarCirculo(250, 250, 50, "red");
-                dibujarCirculo(250, 150, 50, "yellow");
-                dibujarCirculo(350, 250, 50, "black");
-                dibujarCirculo(250, 350, 50, "blue");
+                }	
 
+                function limpiarPantalla(){
+
+                    pincel.clearRect(0,0,600,400);
+
+                }
+
+                var x = 0
+
+                function actualizarPantalla(){
+
+                    limpiarPantalla();
+                    disenharCircunferencia(x,20,10);
+                    x++;
+                }
+
+                setInterval(actualizarPantalla,10);
+                
             </script>
         </section>
     </main>
